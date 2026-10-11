@@ -11,7 +11,7 @@ GA3 README template.
 - Delete instructional comments like this one as you go.
 -->
 
-# GA3 answers - <your-name>
+# GA3 answers - <Nabina Karki>
 
 ------------------------------------------------------------------------
 
@@ -37,13 +37,13 @@ GA3 README template.
 
 <!-- No need to paste the script: we'll look at scripts/echo.sh directly. -->
 
-*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`):
+*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`): I think this will print $1: Oct07, $2: Oct08, $3: unbound variable
 
-*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10`):
+*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10`): I think this will print $1: Oct07, $2: Oct08, $3: Oct09
 
-*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"`):
+*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"`): I think this will print $1: Oct07, $2: Oct08, $3: Oct 09 Oct10
 
-*Answer* (prediction and reasoning for `bash scripts/echo.sh results/fastqc/*.html`):
+*Answer* (prediction and reasoning for `bash scripts/echo.sh results/fastqc/*.html`): I think this will print $1: result/fastqc/S63_R1_fastqc.html $2: result/fastqc/S63_R2_fastqc.html $3:result/fastqc/S64_R1_fastqc.html 
 
 ### 5: Run `echo.sh` and compare with your predictions
 
@@ -53,7 +53,10 @@ bash scripts/echo.sh Oct07 Oct08
 
 The output of the command was:
 
-```         
+```   
+Oct07
+Oct08
+scripts/echo.sh: line 6: $3: unbound variable      
 ```
 
 ```bash
@@ -62,7 +65,11 @@ bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10
 
 The output of the command was:
 
-```         
+```
+Oct07
+Oct08
+Oct09
+Finished         
 ```
 
 ```bash
@@ -71,7 +78,11 @@ bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"
 
 The output of the command was:
 
-```         
+```
+Oct07
+Oct08
+Oct09 Oct10
+Finished      
 ```
 
 ```bash
@@ -80,10 +91,14 @@ bash scripts/echo.sh results/fastqc/*.html
 
 The output of the command was:
 
-```         
+```      
+results/fastqc/S63_R1_fastqc.html
+results/fastqc/S63_R2_fastqc.html
+results/fastqc/S64_R1_fastqc.html
+Finished
 ```
 
-*Answer*: Which output (if any) differed from your prediction, and why?
+*Answer*: Which output (if any) differed from your prediction, and why? **Yes, my predictions for 2nd, 3rd and 4th commands were different because I didn't realize that echo "finished" will print as it is beacuse this was not a defined variable and it will print as finished in the end** 
 
 ### 6: Write the `printline.sh` script
 
@@ -94,23 +109,27 @@ The output of the command was:
 Test 1:
 
 ```bash
-# Your command:
+[nabinak77@p0220 GA3]$ bash scripts/printline.sh data/metadata.tsv 2
 ```
 
 The output of the command was:
 
-```         
+```
+S82     10dpi   cathemerium         
 ```
 
 Test 2 (with redirection), and checking the contents of the output file:
 
 ```bash
-# Your command:
+[nabinak77@p0220 GA3]$ touch results/S82.txt
+[nabinak77@p0220 GA3]$ bash scripts/printline.sh data/metadata.tsv 2 > results/S82.txt 
+[nabinak77@p0220 GA3]$ cat results/S82.txt 
 ```
 
 The output of the command that checks the file contents was:
 
-```         
+```    
+S82     10dpi   cathemerium     
 ```
 
 ------------------------------------------------------------------------
