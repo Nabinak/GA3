@@ -138,14 +138,14 @@ S82     10dpi   cathemerium
 
 ### 8: Get a MultiQC container link
 
-*Answer*: The container link (URI) is:
+*Answer*: The container link (URI) is: oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20
 
 ### 9: MultiQC's help info, and the MultiQC command
 
 Code to run `multiqc --help` with the container:
 
 ```bash
-# Your command:
+[nabinak77@p0220 GA3]$ apptainer exec oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20 multiqc --help
 ```
 
 <!-- You don't need to paste the MultiQC help output -->
@@ -153,7 +153,7 @@ Code to run `multiqc --help` with the container:
 The MultiQC command to run MultiQC on `results/fastqc` with output in `results/multiqc`:
 
 ```bash
-# Your command:
+multiqc --outdir results/multiqc results/fastqc
 ```
 
 ### 10: Write the `multiqc.sh` script
@@ -165,14 +165,15 @@ The MultiQC command to run MultiQC on `results/fastqc` with output in `results/m
 Code to run the script:
 
 ```bash
-# Your command:
+[nabinak77@p0220 GA3]$ bash scripts/multiqc.sh 
 ```
 
 <!-- You don't need to paste the MultiQC logging output -->
 
-*Answer*: Number of FastQC reports MultiQC found:
+*Answer*: Number of FastQC reports MultiQC found: 44
 
 *Answer*: Does that match what you expected? Why/why not?
+I think this matched the number beacuse it counted both R1 and R2 fastqc files. 
 
 ### 12: Make `multiqc.sh` accept arguments, and rerun it
 
@@ -181,14 +182,14 @@ Code to run the script:
 Code to rerun the script:
 
 ```bash
-# Your command:
+[nabinak77@p0220 GA3]$ bash scripts/multiqc.sh results/fastqc results/multiqc
 ```
 
 <!-- No need to paste any output -->
 
 ### 13: Differences between the two MultiQC runs
 
-*Answer*:
+*Answer*: I think there was 88 files before and with second run there was 89 files and there is difference in the name it renamed with new number. I think its because there was already another file of the same name and to not over write it created new one. 
 
 ------------------------------------------------------------------------
 
