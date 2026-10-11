@@ -11,7 +11,7 @@ GA3 README template.
 - Delete instructional comments like this one as you go.
 -->
 
-# GA3 answers - <Nabina Karki>
+# GA3 answers - Nabina Karki
 
 ------------------------------------------------------------------------
 
@@ -244,21 +244,40 @@ I don't think so it should be commited to my git repo because I already have the
 
 ### 21: Explore the MultiQC report
 
-*Answer* (one insight you gained):
+*Answer* (one insight you gained): I think it helps to compare multiple samples together.
 
-*Answer* (one thing you're confused about):
+
+
+*Answer* (one thing you're confused about): This is helpful for multiple comparison but in graphs like histograms and quality score, the graph line overlapped so how can we see individual report of particular sample. 
 
 ### 22: Pandoc versions
 
 ```bash
-# Your command:
+pandoc -v
 ```
 
 The output of the command(s) was:
 
-```         
+```  
+pandoc 2.14.0.3
+Compiled with pandoc-types 1.22.1, texmath 0.12.3.3, skylighting 0.10.5.2,
+citeproc 0.4.0.1, ipynb 0.1.0.1
+User data directory: /users/PAS3493/nabinak77/.local/share/pandoc
+Copyright (C) 2006-2021 John MacFarlane. Web:  https://pandoc.org
+This is free software; see the source for copying conditions. There is no
+warranty, not even for merchantability or fitness for a particular purpose.       
 ```
 
 *Answer*: Is the Pandoc version available by default the most recent one?
 
+No, the default available one is not the recent one.
+
 *Answer*: Which Pandoc version are you using after loading the module?
+
+pandoc 3.6.4
+Features: +server +lua
+Scripting engine: Lua 5.4
+User data directory: /users/PAS3493/nabinak77/.local/share/pandoc
+Copyright (C) 2006-2024 John MacFarlane. Web: https://pandoc.org
+This is free software; see the source for copying conditions. There is no
+warranty, not even for merchantability or fitness for a particular purpose.
