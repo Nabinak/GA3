@@ -197,9 +197,9 @@ Code to rerun the script:
 
 ### 14: The structure of the Pandoc command
 
-*Answer* (options and arguments, and what each does):
+*Answer* (options and arguments, and what each does): I believe the options is output and first argument probably is the format we want it to be converted and second argument is the existing format. 
 
-*Answer* (how does Pandoc know which output format to produce?):
+*Answer* (how does Pandoc know which output format to produce?): I think the option -o directs it so may be thats why the ouput or wanted format is used as argument just after option -o. 
 
 ### 15: Render your README to PDF and HTML
 
@@ -210,16 +210,19 @@ pandoc -o README.pdf README.md
 - Command to render to HTML:
 
 ```bash
-# Your command:
+#pandoc -o README.html README.md
 ```
 
 ### 16: Should the rendered files be committed?
 
 *Answer*: Should the rendered files be committed to your Git repo? Why/why not?
 
+I don't think so it should be commited to my git repo because I already have the markdown files already commited and if I wanted to convert I will have the markdown file to convert when needed. If we are converting to share with other who does not need it may be we can convert when needed. 
+
+
 ### 17: Install the PDF Viewer extension and view the PDF
 
-*Answer*: One observation about the rendered PDF file:
+*Answer*: One observation about the rendered PDF file: I observe that with long url links was cut off may be to accomodate the margin. The pdf file didn't print everything in the line for my answer of q9 where I had command for multiqc. 
 
 ## Part E: Publish your repo on GitHub
 
